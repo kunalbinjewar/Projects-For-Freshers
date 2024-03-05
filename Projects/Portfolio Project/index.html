@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+   <!-- Include Font Awesome icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65jg5D03dwQwZdAVTq31zWoDyOOb99i8WqI6GK Pollution GA4su7thZ5J6ZlTvuq7ZWvkFMZ7k7W5T6KsE5bao5I64g68GxjdM8Zv5lGklw5Gio8w3xHJjmYl6f3LJfdTg==" crossorigin="anonymous" />
+
+
+</head>
+    <!-- Include custom CSS -->
+    <!-- <link href="styles.css" rel="stylesheet"> -->
+    <style>
+                 /* styles.css */
+
+/* Sidebar */
+aside {
+    width: 25%; /* Adjust width as needed */
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    /* overflow-y: auto; */
+}
+
+/* Main content */
+main {
+    margin-left: 25%; /* Match the sidebar width */
+}
+
+/* Navigation links */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+}
+
+a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Add margin to sections */
+section {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Add padding to sections */
+.py-16 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+/* Center text vertically in sidebar */
+.flex-center {
+    display: flex;
+    align-items: center;
+}
+
+/* Fullscreen hero section */
+.hero {
+    height: 100vh;
+}
+
+/* Overlay for hero section */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Navbar */
+nav {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.section {
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Hover effects */
+/* Add hover effect to navigation links */
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Add hover effect to project cards */
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Add hover effect to skills */
+.skill:hover .progress {
+    transform: scale(1.1);
+}
+
+/* Tailwind CSS overrides */
+/* For customizing the default Tailwind styles */
+/* Add custom animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Education background section */
+.education-item {
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Hover effects */
+.education-item:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+/* Add custom animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Work experience section */
+.work-item {
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Hover effects */
+.work-item:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+/* Add custom animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Skills section */
+.skill {
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Hover effects */
+.skill:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+/* Skill progress bar */
+.progress-bar {
+    width: 100%;
+    background-color: #e5e7eb;
+    border-radius: 10px;
+}
+
+.progress {
+    height: 100%;
+    border-radius: 10px;
+}
+/* Add custom animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Diverse interests section */
+.interest-item {
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Hover effects */
+.interest-item:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+
+/* Add custom animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Projects section */
+/* Hover effects */
+.project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Add scaling effect on hover for images */
+.project-card:hover img {
+    transform: scale(1.05);
+}
+/* Add custom animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hobbies section */
+.hobby-item {
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Hover effects */
+.hobby-item:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+/* Add custom animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Certificate section */
+.certificate-item {
+    animation: fadeInUp 1s ease-in-out;
+}
+
+/* Hover effects */
+.certificate-item:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+}
+/* Contact item animation */
+.contact-item:hover {
+    transform: translateY(-2px);
+}
+
+/* styles.css */
+.social-icon {
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+    </style>
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <aside class="bg-gray-800 text-white h-screen w-1/4 fixed left-0 top-0 overflow-y-auto">
+        <div class="p-4">
+            <h2 class="text-lg font-semibold mb-4">Sections</h2>
+            <ul>
+                <li class="mb-2"><a href="#about" class="block hover:underline">About Me</a></li>
+                <li class="mb-2"><a href="#education" class="block hover:underline">Education</a></li>
+                <li class="mb-2"><a href="#work" class="block hover:underline">Internships</a></li>
+                <li class="mb-2"><a href="#skills" class="block hover:underline">Tech</a></li>
+                <li class="mb-2"><a href="#soft-skills" class="block hover:underline">Soft Skill</a></li>
+                <li class="mb-2"><a href="#interests" class="block hover:underline">Diverse Interests</a></li>
+                <li class="mb-2"><a href="#hobbies" class="block hover:underline">Hobbies</a></li>
+                <li class="mb-2"><a href="#certificates" class="block hover:underline">Certificates</a></li>
+                <li class="mb-2"><a href="#projects" class="block hover:underline">Projects</a></li>
+                <li class="mb-2"><a href="#contact" class="block hover:underline">Contact</a></li>
+            </ul>
+        </div>
+</div>
+    </aside>
+
+    <!-- Main content -->
+    <main class="ml-1/4 p-4">
+        <!-- Navbar -->
+        <nav class="bg-gray-800 text-white p-4">
+            <div class="container mx-auto">
+                <span class="text-xl font-semibold">KunalBinjewar💻</span>
+                <ul class="flex space-x-4">
+                    <li><a href="https://www.linkedin.com/in/kunal-binjewar%F0%9F%9B%A1%EF%B8%8F-3b2082219/" class="nav-link">LinkedIn</a></li>
+                    <li><a href="https://github.com/kunalbinjewar" class="nav-link">GitHub</a></li>
+                </ul>
+                <!-- Add navigation links if needed -->
+            </div>
+        </nav>
+
+        <!-- About Me section -->
+        <section id="about" class="py-16 section">
+            <div class="container mx-auto">
+                <h2 class="text-2xl font-bold mb-8">About Me</h2>
+                <p>My name is Kunal, and I completed my Bachelor's of Engineering in IT in 2022. I work as a frontend developer, proficient in HTML, CSS, JavaScript, React, Bootstrap, and Tailwind, with my projects showcased on GitHub.
+
+                 I am actively involved in AI technologies and constantly strive to enhance my skills in data analysis. This field not only fosters critical thinking and problem-solving but also enables me to understand market trends through data visualization.</p>
+                <p>Networking and seeking guidance from others are essential aspects of my life. I enjoy participating in new activities and engaging with people to broaden my horizons.
+
+                 I have initiated a platform called CareerCraftHub, where I offer services such as resume writing in ATS format with templates, job opportunities for freshers, coding paths for beginners, and strategies for optimizing LinkedIn content and profiles. These services are provided through personalized 1:1 calls in collaboration with Topmate platform.</p>
+            </div>
+        </section>
+
+<!-- Education background section -->
+<section id="education" class="py-16 bg-gray-100 section">
+                 <div class="container mx-auto">
+                     <h2 class="text-2xl font-bold mb-8 text-center">Education</h2>
+                     <!-- Education items -->
+                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                         <!-- Education item 1 -->
+                         <div class="education-item bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                             <h3 class="text-lg font-semibold mb-2">Rashtrasant Tukdoji Maharaj University</h3>
+                             <p class="text-gray-700">Bachelor's Degree in Information Technology</p>
+                             <p class="text-gray-500">Year: 2018 - 2022</p>
+                             <p class="text-gray-500">CGPA: 8.6 </p>
+                         </div>
+                         <!-- Education item 2 -->
+                         <div class="education-item bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                             <h3 class="text-lg font-semibold mb-2">ZP Junior College Mohadi</h3>
+                             <p class="text-gray-700">Higher Secondary Education</p>
+                             <p class="text-gray-500">Year: 2017 - 2018</p> 
+                             <p class="text-grey-500"> 62.62% </p>
+                         </div>
+                         <!-- Education item 3 -->
+                         <div class="education-item bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                             <h3 class="text-lg font-semibold mb-2">Late Shri Sulochana Devi Pardhi Vidyalaya Mohadi</h3>
+                             <p class="text-gray-700">Secondary Education</p>
+                             <p class="text-gray-500">Year: 2015 - 2016</p>
+                             <p class="text-gray-500"> 74.80%</p>
+                         </div>
+                     </div>
+                 </div>
+             </section>
+             
+
+        <!-- Work experience section -->
+<section id="work" class="py-16 section bg-gray-200">
+                 <div class="container mx-auto">
+                     <h2 class="text-2xl font-bold mb-8 text-center">Internships</h2>
+                     <!-- Work items -->
+                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                         <!-- Work item 1 -->
+                         <div class="work-item bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                             <h3 class="text-lg font-semibold mb-2">Full Stack Developer Intern</h3>
+                             <p class="text-gray-700">Promact Infotech Pvt Ltd</p>
+                             <p class="text-gray-500">Year: Feb 2023 - April 2023</p>
+                             <p class="mt-4">Collaborated with senior team members to gain practical experience in full-stack development.
+                                  Successfully executed tasks utilizing HTML, CSS, JavaScript, Angular, and .NET technologies.
+                                  Received mentorship from seasoned professionals, enhancing technical proficiency and problem-solving skills.
+                                  </p>
+                         </div>
+                         <!-- Work item 2 -->
+                         <div class="work-item bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                             <h3 class="text-lg font-semibold mb-2">Frontend Developer Intern</h3>
+                             <p class="text-gray-700">Cirkle Studio Pvt Ltd</p>
+                             <p class="text-gray-500">Year: May 2023 - July 2023</p>
+                             <p class="mt-4">Proficiently completed tasks involving HTML, CSS, JavaScript, Bootstrap, and GitHub, supporting web application development.
+                                  Utilized React to craft dynamic and responsive user interfaces, acquiring practical experiences with contemporary front-end frameworks.
+                                  </p>
+                         </div>
+                         <!-- Work item 3 -->
+                         <div class="work-item bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                             <h3 class="text-lg font-semibold mb-2">Web Developer Intern</h3>
+                             <p class="text-gray-700">Oasis Infobyte</p>
+                             <p class="text-gray-500">Year: Nov 2022 - Dec 2022</p>
+                             <p class="mt-4">One Month web development remote internship. </p>
+                         </div>
+                     </div>
+                 </div>
+             </section>
+             
+
+       <!-- Skills section -->
+<section id="skills" class="py-16 bg-gray-100 section">
+                 <div class="container mx-auto">
+                     <h2 class="text-2xl font-bold mb-8 text-center">Tech</h2>
+                     <!-- Skills list -->
+                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                         <!-- Skill 1 -->
+                         <div class="skill bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                             <h3 class="text-lg font-semibold mb-2">HTML</h3>
+                             <div class="progress-bar h-2 bg-gray-300 rounded-lg">
+                                 <div class="progress h-2 bg-blue-500 rounded-lg" style="width: 80%;"></div>
+                             </div>
+                         </div>
+                         <!-- Skill 2 -->
+                         <div class="skill bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                             <h3 class="text-lg font-semibold mb-2">CSS</h3>
+                             <div class="progress-bar h-2 bg-gray-300 rounded-lg">
+                                 <div class="progress h-2 bg-blue-500 rounded-lg" style="width: 70%;"></div>
+                             </div>
+                         </div>
+                         <!-- Skill 3 -->
+                         <div class="skill bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                             <h3 class="text-lg font-semibold mb-2">JavaScript</h3>
+                             <div class="progress-bar h-2 bg-gray-300 rounded-lg">
+                                 <div class="progress h-2 bg-blue-500 rounded-lg" style="width: 65%;"></div>
+                             </div>
+                         </div>
+                         <!-- Skill 4 -->
+                         <div class="skill bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                                  <h3 class="text-lg font-semibold mb-2">React</h3>
+                                  <div class="progress-bar h-2 bg-gray-300 rounded-lg">
+                                      <div class="progress h-2 bg-blue-500 rounded-lg" style="width: 55%;"></div>
+                                  </div>
+                              </div>
+                              <!-- Skill 5 -->
+                         <div class="skill bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                                  <h3 class="text-lg font-semibold mb-2">Bootstrap</h3>
+                                  <div class="progress-bar h-2 bg-gray-300 rounded-lg">
+                                      <div class="progress h-2 bg-blue-500 rounded-lg" style="width: 65%;"></div>
+                                  </div>
+                              </div>
+                              <!-- Skill 6 -->
+                         <div class="skill bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                                  <h3 class="text-lg font-semibold mb-2">Tailwind CSS</h3>
+                                  <div class="progress-bar h-2 bg-gray-300 rounded-lg">
+                                      <div class="progress h-2 bg-blue-500 rounded-lg" style="width: 70%;"></div>
+                                  </div>
+                              </div>
+                              <!-- Skill 7 -->
+                         <div class="skill bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                                  <h3 class="text-lg font-semibold mb-2">Angular</h3>
+                                  <div class="progress-bar h-2 bg-gray-300 rounded-lg">
+                                      <div class="progress h-2 bg-blue-500 rounded-lg" style="width: 50%;"></div>
+                                  </div>
+                              </div>
+                              <!-- Skill 8 -->
+                         <div class="skill bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                                  <h3 class="text-lg font-semibold mb-2">C++</h3>
+                                  <div class="progress-bar h-2 bg-gray-300 rounded-lg">
+                                      <div class="progress h-2 bg-blue-500 rounded-lg" style="width: 60%;"></div>
+                                  </div>
+                              </div>
+                              <!-- Skill 9 -->
+                         <div class="skill bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                                  <h3 class="text-lg font-semibold mb-2">Python</h3>
+                                  <div class="progress-bar h-2 bg-gray-300 rounded-lg">
+                                      <div class="progress h-2 bg-blue-500 rounded-lg" style="width: 40%;"></div>
+                                  </div>
+                              </div>
+                              <!-- Skill 10 -->
+                         <div class="skill bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                                  <h3 class="text-lg font-semibold mb-2">SQL</h3>
+                                  <div class="progress-bar h-2 bg-gray-300 rounded-lg">
+                                      <div class="progress h-2 bg-blue-500 rounded-lg" style="width: 35%;"></div>
+                                  </div>
+                              </div>
+                         <!-- Add more skills as needed -->
+                     </div>
+                 </div>
+             </section>
+             
+             <!-- Soft skills section -->
+<section id="soft-skills" class="py-16 section bg-gray-100">
+                 <div class="container mx-auto">
+                     <h2 class="text-2xl font-bold mb-8 text-center">Soft Skills</h2>
+                     <!-- Soft skills list -->
+                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                         <!-- Soft Skill 1 -->
+                         <div class="soft-skill bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                             <h3 class="text-lg font-semibold mb-2">Communication</h3>
+                             <div class="progress-bar h-2 bg-gray-300 rounded-lg">
+                                 <div class="progress h-2 bg-purple-500 rounded-lg" style="width: 80%;"></div>
+                             </div>
+                         </div>
+                         <!-- Soft Skill 2 -->
+                         <div class="soft-skill bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                             <h3 class="text-lg font-semibold mb-2">Problem Solving</h3>
+                             <div class="progress-bar h-2 bg-gray-300 rounded-lg">
+                                 <div class="progress h-2 bg-purple-500 rounded-lg" style="width: 70%;"></div>
+                             </div>
+                         </div>
+                         <!-- Soft Skill 3 -->
+                         <div class="soft-skill bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                             <h3 class="text-lg font-semibold mb-2">Time Management</h3>
+                             <div class="progress-bar h-2 bg-gray-300 rounded-lg">
+                                 <div class="progress h-2 bg-purple-500 rounded-lg" style="width: 90%;"></div>
+                             </div>
+                         </div>
+                         <!-- Soft Skill 3 -->
+                         <div class="soft-skill bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                                  <h3 class="text-lg font-semibold mb-2">Networking</h3>
+                                  <div class="progress-bar h-2 bg-gray-300 rounded-lg">
+                                      <div class="progress h-2 bg-purple-500 rounded-lg" style="width: 90%;"></div>
+                                  </div>
+                              </div>
+                              <!-- Soft Skill 3 -->
+                         <div class="soft-skill bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                                  <h3 class="text-lg font-semibold mb-2">Positive Attitude</h3>
+                                  <div class="progress-bar h-2 bg-gray-300 rounded-lg">
+                                      <div class="progress h-2 bg-purple-500 rounded-lg" style="width: 90%;"></div>
+                                  </div>
+                              </div>
+                              <!-- Soft Skill 3 -->
+                         <div class="soft-skill bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                                  <h3 class="text-lg font-semibold mb-2">Attention to detail</h3>
+                                  <div class="progress-bar h-2 bg-gray-300 rounded-lg">
+                                      <div class="progress h-2 bg-purple-500 rounded-lg" style="width: 90%;"></div>
+                                  </div>
+                              </div>
+                              <!-- Soft Skill 3 -->
+                         <div class="soft-skill bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                                  <h3 class="text-lg font-semibold mb-2">Helping Nature</h3>
+                                  <div class="progress-bar h-2 bg-gray-300 rounded-lg">
+                                      <div class="progress h-2 bg-purple-500 rounded-lg" style="width: 90%;"></div>
+                                  </div>
+                              </div>
+                              <!-- Soft Skill 3 -->
+                         <div class="soft-skill bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                                  <h3 class="text-lg font-semibold mb-2">Research Skills</h3>
+                                  <div class="progress-bar h-2 bg-gray-300 rounded-lg">
+                                      <div class="progress h-2 bg-purple-500 rounded-lg" style="width: 90%;"></div>
+                                  </div>
+                              </div>
+                              <!-- Soft Skill 3 -->
+                         <div class="soft-skill bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                                  <h3 class="text-lg font-semibold mb-2">Adaptability</h3>
+                                  <div class="progress-bar h-2 bg-gray-300 rounded-lg">
+                                      <div class="progress h-2 bg-purple-500 rounded-lg" style="width: 90%;"></div>
+                                  </div>
+                              </div>
+                         <!-- Add more soft skills as needed -->
+                     </div>
+                 </div>
+             </section>
+             
+ 
+<!-- Diverse interests section -->
+<section id="interests" class="py-16 section bg-gray-100">
+                 <div class="container mx-auto">
+                     <h2 class="text-2xl font-bold mb-8 text-center">Diverse Interests</h2>
+                     <!-- Interest items -->
+                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                         <!-- Interest item 1 -->
+                         <div class="interest-item bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                             <h3 class="text-lg font-semibold mb-2">Data Analysis</h3>
+                             <p class="text-gray-700">As a frontend developer, I have a strong proficiency in the frontend field and I continuously strive to stay active and updated within it. However, I also have a diverse interest in data analysis, which is a field that always excites and intrigues me. I find that data analysis enhances my critical thinking skills, helps me understand market trends, and allows me to explore new concepts. Moreover, the career prospects in this field are quite promising, offering ample opportunities for growth and development.</p>
+                         </div>
+                         <!-- Interest item 2 -->
+                         <div class="interest-item bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                             <h3 class="text-lg font-semibold mb-2">Business Analyst</h3>
+                             <p class="text-gray-700">To stay active in the business analyst field alongside my frontend career, I actively seek out opportunities to apply analytical skills to frontend projects. By incorporating data-driven insights into frontend development, I enhance user experiences and drive better outcomes for businesses. Additionally, I participate in relevant workshops, courses, and networking events to stay updated on industry trends and expand my knowledge base. This dual focus not only strengthens my proficiency in both fields but also positions me as a valuable asset in the tech industry, capable of delivering impactful solutions that bridge the gap between technology and business objectives.</p>
+                         </div>
+                         <!-- Interest item 3 -->
+                         <div class="interest-item bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                             <h3 class="text-lg font-semibold mb-2">Content Creation on LinkedIn</h3>
+                             <p class="text-gray-700">
+                                  To stay active in content creation on LinkedIn while advancing my frontend career, I leverage my expertise to share valuable insights, tips, and updates related to frontend development. By consistently posting content about frontend technologies, best practices, and industry trends, I establish myself as a thought leader in the field. This not only enhances my visibility but also attracts opportunities such as speaking engagements, collaborations, and job offers.</p>
+                         </div>
+                         <!-- Add more interests as needed -->
+                     </div>
+                 </div>
+             </section>
+             
+ <!-- Projects section -->
+<section id="projects" class="py-16 section bg-gray-100">
+                 <div class="container mx-auto">
+                     <h2 class="text-2xl font-bold mb-8 text-center">Projects</h2>
+                     <!-- Project cards -->
+                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                         <!-- Project card 1 -->
+                         <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                             <img src="Images/Project 1 netflix clone.png" alt="Project 1" class="w-full h-64 object-cover object-center transition duration-300 hover:scale-105">
+                             <div class="p-6">
+                                 <h3 class="text-lg font-semibold mb-2">Netflix Landing Page Clone</h3>
+                                 <p class="text-gray-700">Developed a responsive Netflix clone landing page using HTML, CSS, and JavaScript. Implemented a hero section with high-quality images and sliding functionality to mimic the Netflix interface. Designed and styled the page to closely resemble the Netflix layout, incorporating modern design principles.                                    </p>
+                                 <a href="https://netflix-landing-page-pink.vercel.app/" class="text-blue-500 hover:underline mt-4 inline-block">View Project</a>
+                             </div>
+                         </div>
+                         <!-- Project card 2 -->
+                         <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                             <img src="Images/Project 2 Landing page.png" alt="Project 2" class="w-full h-64 object-cover object-center transition duration-300 hover:scale-105">
+                             <div class="p-6">
+                                 <h3 class="text-lg font-semibold mb-2">Landing Page</h3>
+                                 <p class="text-gray-700">Developed a responsive landing page using HTML, CSS, and JavaScript. Designed user interface with modern aesthetics and high-quality images               </p>
+                                 <a href="https://landing-page01-6m3l1eq79-kunalbinjewar.vercel.app/" class="text-blue-500 hover:underline mt-4 inline-block">View Project</a>
+                             </div>
+                         </div>
+                         <!-- Project card 3 -->
+                         <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                             <img src="Images/Project 3 KFC Clone.png" alt="Project 3" class="w-full h-64 object-cover object-center transition duration-300 hover:scale-105">
+                             <div class="p-6">
+                                 <h3 class="text-lg font-semibold mb-2">KFC Landing page</h3>
+                                 <p class="text-gray-700">Developed a KFC clone landing page replicating the same interface using HTML, CSS, and JavaScript. Successfully recreated the design and layout of the original KFC website, including menu items, imagery, and branding elements.                                                                          </p>
+                                 <a href="https://kfc-landingpageclone.netlify.app/" class="text-blue-500 hover:underline mt-4 inline-block">View Project</a>
+                             </div>
+                         </div>
+                          <!-- Project card 4 -->
+                          <div class="project-card bg-white rounded-lg shadow-md overflow-hidden">
+                                  <img src="Images/Project 4 Music player.png" alt="Project 3" class="w-full h-64 object-cover object-center transition duration-300 hover:scale-105">
+                                  <div class="p-6">
+                                      <h3 class="text-lg font-semibold mb-2">KFC Landing page</h3>
+                                      <p class="text-gray-700">Designed and developed a personalized music player using HTML, CSS, and JavaScript. Implemented functionality to add and play favourite songs, providing flexibility to listen anytime, anywhere. Utilized responsive design principles to ensure accessibility across various devices, although occasional refinements may be necessary.      elements.                                                                          </p>
+                                      <a href="https://spotifyclonemusicplayer.netlify.app/" class="text-blue-500 hover:underline mt-4 inline-block">View Project</a>
+                                  </div>
+                              </div>
+                         <!-- Add more projects as needed -->
+                     </div>
+                 </div>
+             </section>
+             
+     <!-- Hobbies section -->
+<section id="hobbies" class="py-16 section bg-gray-100">
+                 <div class="container mx-auto">
+                     <h2 class="text-2xl font-bold mb-8 text-center">Hobbies</h2>
+                     <!-- Hobby items -->
+                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                         <!-- Hobby item 1 -->
+                         <div class="hobby-item bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                             <h3 class="text-lg font-semibold mb-2">Music Listening</h3>
+                             <p class="text-gray-700">🎶🎶🎶🎶🎼🎵🎧</p>
+                         </div>
+                         <!-- Hobby item 2 -->
+                         <div class="hobby-item bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                             <h3 class="text-lg font-semibold mb-2">Reading</h3>
+                             <p class="text-gray-700">📖📖📖📖📖📚📘</p>
+                         </div>
+                         <!-- Hobby item 3 -->
+                         <div class="hobby-item bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                             <h3 class="text-lg font-semibold mb-2">Tech Enthuasiast</h3>
+                             <p class="text-gray-700">⚙️⚙️💻📺</p>
+                         </div>
+                          <!-- Hobby item 4 -->
+                          <div class="hobby-item bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                                  <h3 class="text-lg font-semibold mb-2">Thinking Innovative</h3>
+                                  <p class="text-gray-700">😊☺️</p>
+                              </div>
+                               <!-- Hobby item 5 -->
+                         <div class="hobby-item bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                                  <h3 class="text-lg font-semibold mb-2">Watching Movies</h3>
+                                  <p class="text-gray-700">📺📺📺</p>
+                              </div>
+                               <!-- Hobby item 6 -->
+                         <div class="hobby-item bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                                  <h3 class="text-lg font-semibold mb-2">Follow New Technologies</h3>
+                                  <p class="text-gray-700">⚙️⚙️</p>
+                              </div>
+                         <!-- Add more hobbies as needed -->
+                     </div>
+                 </div>
+             </section>
+             
+ 
+<!-- Certificate section -->
+<section id="certificates" class="py-16 section bg-gray-100">
+                 <div class="container mx-auto">
+                     <h2 class="text-2xl font-bold mb-8 text-center">Certificates</h2>
+                     <!-- Certificate items -->
+                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                         <!-- Certificate item 1 -->
+                         <div class="certificate-item bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                             <h3 class="text-lg font-semibold mb-2">Front-end Software Engineering</h3>
+                             <p class="text-gray-700">Skyscanner by Forage</p>
+                         </div>
+                         <!-- Certificate item 2 -->
+                         <div class="certificate-item bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                             <h3 class="text-lg font-semibold mb-2">Professional Skill Development</h3>
+                             <p class="text-gray-700">Two Sigma by Forage</p>
+                         </div>
+                         <!-- Certificate item 3 -->
+                         <div class="certificate-item bg-white p-6 rounded-lg shadow-md transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+                             <h3 class="text-lg font-semibold mb-2">Strategy Consulting</h3>
+                             <p class="text-gray-700">Accenture by Forage</p>
+                         </div>
+                         <!-- Add more certificates as needed -->
+                     </div>
+                 </div>
+             </section>
+<!-- Contact Section -->
+<section id="contact" class="py-16 section bg-gray-900 text-white">
+    <div class="container mx-auto">
+        <h2 class="text-3xl font-bold mb-8 text-center">Contact</h2>
+        <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0">
+            <!-- Email -->
+            <a href="mailto:binjewarkunal@gmail.com" class="flex items-center hover:text-gray-300">
+                <i class="far fa-envelope mr-2"></i>
+                <span>binjewarkunal@gmail.com</span>
+            </a>
+            <!-- Phone number -->
+            <a href="tel:+919725746345" class="flex items-center hover:text-gray-300">
+                <i class="fas fa-phone-alt mr-2"></i>
+                <span>+919725746345</span>
+            </a>
+        </div>
+    </div>
+</section>
+ <!-- JavaScript for smooth scrolling -->
+ <script>
+     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+         anchor.addEventListener('click', function (e) {
+             e.preventDefault();
+ 
+             document.querySelector(this.getAttribute('href')).scrollIntoView({
+                 behavior: 'smooth'
+             });
+         });
+     });
+ </script>
+ 
+ </body>
+ <script src="script.js"></script>
+ </html>
+ 
